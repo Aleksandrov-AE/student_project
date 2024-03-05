@@ -7,7 +7,7 @@ public class SaveStudentOrder {
         studentOrder1.wLastName = "Александрова";
         save(studentOrder1);
     }
-    static long save(StudentOrder studentOrder){
+    static long save(StudentOrder studentOrder) {
         return  199;
     }
 }
