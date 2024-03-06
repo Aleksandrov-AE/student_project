@@ -12,9 +12,9 @@ public class StudentOrderValidator {
             if (!answerCityRegister.success) {
                 break;
             }
-            AnswerCheckWedding answerCheckWedding = checkWedding();
-            AnswerCheckChildren answerCheckChildren = checkChildren();
-            AnswerCheckStudent answerCheckStudent = checkStudent();
+            AnswerCheckWedding answerCheckWedding = checkWedding(studentOrder);
+            AnswerCheckChildren answerCheckChildren = checkChildren(studentOrder);
+            AnswerCheckStudent answerCheckStudent = checkStudent(studentOrder);
             sendEmail(studentOrder);
         }
 
@@ -34,18 +34,15 @@ public class StudentOrderValidator {
         cityRegisterValidator.hostName = "HostName1";
         return cityRegisterValidator.checkCityRegister(studentOrder);
     }
-    static AnswerCheckWedding checkWedding() {
-        System.out.println("checkWedding");
-        return new AnswerCheckWedding();
+    static AnswerCheckWedding checkWedding(StudentOrder studentOrder) {
+       return  new AnswerCheckWeddingValidator().checkWedding(studentOrder);
     }
 
-    static AnswerCheckChildren checkChildren() {
-        System.out.println("checkChildren");
-        return new AnswerCheckChildren();
+    static AnswerCheckChildren checkChildren(StudentOrder studentOrder) {
+        return new AnswerCheckChildrenValidator().checkChildren(studentOrder);
     }
 
-    static AnswerCheckStudent checkStudent() {
-        System.out.println("checkStudent");
-        return new AnswerCheckStudent();
+    static AnswerCheckStudent checkStudent(StudentOrder studentOrder) {
+        return new AnswerCheckStudentValidator().checkStudent(studentOrder);
     }
 }
