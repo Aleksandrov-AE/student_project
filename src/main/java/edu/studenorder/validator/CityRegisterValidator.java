@@ -1,3 +1,8 @@
+package edu.studenorder.validator;
+
+import edu.studenorder.domain.AnswerCityRegister;
+import edu.studenorder.domain.StudentOrder;
+
 public class CityRegisterValidator {
     String hostName;
     String login;
@@ -5,7 +10,7 @@ public class CityRegisterValidator {
      AnswerCityRegister checkCityRegister(StudentOrder studentOrder) {
          System.out.println("checkCityRegister running" + hostName);
          AnswerCityRegister answerCityRegister = new AnswerCityRegister();
-         answerCityRegister.success = false;
+         answerCityRegister.setSuccess(false);
          return answerCityRegister;
      }
 }

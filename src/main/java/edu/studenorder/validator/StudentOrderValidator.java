@@ -1,3 +1,7 @@
+package edu.studenorder.validator;
+
+import edu.studenorder.domain.*;
+
 public class StudentOrderValidator {
     public static void main(String[] args) {
         checkAll();
@@ -9,7 +13,7 @@ public class StudentOrderValidator {
                 break;
             }
             AnswerCityRegister answerCityRegister = checkCityRegister(studentOrder);
-            if (!answerCityRegister.success) {
+            if (!answerCityRegister.isSuccess()) {
                 break;
             }
             AnswerCheckWedding answerCheckWedding = checkWedding(studentOrder);

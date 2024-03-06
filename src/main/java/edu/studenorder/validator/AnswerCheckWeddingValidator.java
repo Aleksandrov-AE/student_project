@@ -1,3 +1,8 @@
+package edu.studenorder.validator;
+
+import edu.studenorder.domain.AnswerCheckWedding;
+import edu.studenorder.domain.StudentOrder;
+
 public class AnswerCheckWeddingValidator {
 
      AnswerCheckWedding checkWedding(StudentOrder studentOrder) {

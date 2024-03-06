@@ -1,3 +1,5 @@
+package edu.studenorder.domain;
+
 public class SaveStudentOrder {
     public static void main(String[] args) {
         StudentOrder studentOrder1 = new StudentOrder();
