@@ -8,16 +8,21 @@ public class CityRegisterValidator {
     String login;
     int port;
 
-    CityRegisterChecker realCityRegisterChecker;
+    CityRegisterChecker cityRegisterChecker;
 
     public CityRegisterValidator() {
-        realCityRegisterChecker = new FakeCityRegisterChecker();
+        cityRegisterChecker = new FakeCityRegisterChecker();
     }
 
     AnswerCityRegister checkCityRegister(StudentOrder studentOrder) {
          System.out.println("checkCityRegister running" + hostName);
+         try {
+             cityRegisterChecker.checkPerson(studentOrder.getHusband());
+         } catch (CityRegisterException e) {
+             e.printStackTrace();
+         }
+
          AnswerCityRegister answerCityRegister = new AnswerCityRegister();
-         answerCityRegister.setSuccess(false);
          return answerCityRegister;
      }
 }
