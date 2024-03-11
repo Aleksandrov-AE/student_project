@@ -1,6 +1,10 @@
 package edu.studenorder.validator;
 
 import edu.studenorder.domain.*;
+import edu.studenorder.domain.register.AnswerCityRegister;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class StudentOrderValidator {
 
@@ -21,9 +25,9 @@ public class StudentOrderValidator {
         studentOrder.checkAll();
     }
     public void checkAll() {
-        StudentOrder[] studentOrders = readStudentOrder();
-        for (int i = 0; i < studentOrders.length; i++) {
-            checkOneStudentOrder(studentOrders[i]);
+        List<StudentOrder> studentOrders = readStudentOrder();
+        for (StudentOrder studentOrder: studentOrders) {
+            checkOneStudentOrder(studentOrder);
         }
     }
 
@@ -41,10 +45,10 @@ public class StudentOrderValidator {
         System.out.println("SendEmail");
     }
 
-    public StudentOrder[] readStudentOrder() {
-        StudentOrder[] studentOrders = new StudentOrder[3];
+    public List<StudentOrder> readStudentOrder() {
+        List<StudentOrder> studentOrders = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
-            studentOrders[i] = SaveStudentOrder.buildStudentOrder(i);
+            studentOrders.add(SaveStudentOrder.buildStudentOrder(i));
         }
         return studentOrders;
     }

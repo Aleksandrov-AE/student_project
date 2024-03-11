@@ -7,7 +7,7 @@ public abstract class Person {
     private String givenName;
     private String patronymic;
     private LocalDate dateOfBirth;
-    private Adress adress;
+    private Address adress;
 
     public Person() {
         System.out.println("Person create");
@@ -52,11 +52,11 @@ public abstract class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Adress getAdress() {
+    public Address getAdress() {
         return adress;
     }
 
-    public void setAdress(Adress adress) {
+    public void setAddress(Address adress) {
         this.adress = adress;
     }
 }

@@ -7,6 +7,7 @@ public class Adult extends Person {
     private String passportNumber;
     private LocalDate issueDate;
     private String issueDepartment;
+    String studentId;
 
     public Adult() {
         System.out.println("Adult create");
@@ -46,5 +47,13 @@ public class Adult extends Person {
 
     public void setIssueDepartment(String issueDepartment) {
         this.issueDepartment = issueDepartment;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 }

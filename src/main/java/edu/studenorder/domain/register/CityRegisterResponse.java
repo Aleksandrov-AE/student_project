@@ -1,6 +1,6 @@
-package edu.studenorder.domain;
+package edu.studenorder.domain.register;
 
-public class CheckCityRegisterResponse {
+public class CityRegisterResponse {
     private boolean existing;
     private Boolean temporal;
 
