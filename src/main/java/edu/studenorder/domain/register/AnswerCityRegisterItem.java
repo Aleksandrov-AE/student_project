@@ -5,10 +5,10 @@ import edu.studenorder.domain.Person;
 public class AnswerCityRegisterItem {
 
     public enum CheckCityRegisterStatus {
-        YES, NO, ERROR;
+        YES, NO, ERROR
     }
 
-    public class CheckCityRegisterError {
+    public static class CheckCityRegisterError {
         private String code;
         private String text;
 
@@ -31,7 +31,9 @@ public class AnswerCityRegisterItem {
 
     private CheckCityRegisterStatus checkCityRegisterStatus;
 
-
-
-
+    public AnswerCityRegisterItem(Person person, CheckCityRegisterError checkCityRegisterError, CheckCityRegisterStatus checkCityRegisterStatus) {
+        this.person = person;
+        this.checkCityRegisterError = checkCityRegisterError;
+        this.checkCityRegisterStatus = checkCityRegisterStatus;
+    }
 }
